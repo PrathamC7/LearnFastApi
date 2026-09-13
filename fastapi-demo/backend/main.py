@@ -22,7 +22,7 @@ Base.metadata.create_all(bind=engine)
 
 
 @app.get("/products")
-def product():
+def get_product():
 
     db = sessionLocal()
 
@@ -32,5 +32,11 @@ def product():
 
     return products
  
-
+@app.post("/products")
+def add_product(product : Product):
+    db = sessionLocal()
+    db.add(product)
+    db.commit()
+    db.close()
+    return "Product added successfully"
      

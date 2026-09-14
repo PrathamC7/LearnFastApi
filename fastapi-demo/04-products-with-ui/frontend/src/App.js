@@ -4,7 +4,7 @@ import "./App.css";
 import TaglineSection from "./TaglineSection";
 
 const api = axios.create({
-    baseURL: "http://15.206.90.28:8000",
+    baseURL: "http://localhost:8000",
 });
 
 function App() {
@@ -199,7 +199,7 @@ function App() {
       <header className="topbar">
         <div className="brand">
           <span className="brand-badge">📦</span>
-          <h1>Telusko Trac</h1>
+          <h1>Product Management</h1>
         </div>
         <div className="top-actions">
           <button className="btn btn-light" onClick={fetchProducts} disabled={loading}>
